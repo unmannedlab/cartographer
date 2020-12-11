@@ -1,0 +1,11 @@
+#! /bin/bash
+source /opt/ros/kinetic/setup.bash && source /path/to/cartographer/install_isolated/setup.bash
+file_list=""
+for file in "path/to/rosbag/files/"*; do
+    [[ -f "$file" ]] && file_list+="${file} "
+done
+echo "$file_list"
+roslaunch $PWD/launch/assets_writer_warthog_3d.launch \
+   bag_filenames:="$file_list"  \
+   config_path:=$PWD/config/ \
+   pose_graph_filename:=/path/to/pbstream

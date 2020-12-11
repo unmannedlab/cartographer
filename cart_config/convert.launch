@@ -1,0 +1,10 @@
+<launch>
+	<arg name="bag_name" value="16" />
+	<arg name="save_path" value="/media/maskjp/Datasets1/USL/Warthog/2019-11-17/dataset/sequences"/>
+	<arg name="bag_filename" value="/media/maskjp/Datasets1/USL/Warthog/2019-11-17/bagfiles/$(arg bag_name).bag"/>
+	<node pkg="preprocess" type="convert_pc" name="convert_pc"  output="screen" >   
+	  <param name="~/lidar_topic" type="string" value="/os1_cloud_node/points" />
+	  <param name="~/save_path" type="string" value="$(arg save_path)/$(arg bag_name)/ouster/" />	  
+	</node>	
+ 	<node name="playbag" pkg="rosbag" type="play" args="--clock $(arg bag_filename)" />	
+</launch>

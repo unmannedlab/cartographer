@@ -1,0 +1,8 @@
+#! /bin/bash
+BAGNAME=02
+source /opt/ros/kinetic/setup.bash && source /path/to/cartographer/install_isolated/setup.bash
+roslaunch $PWD/launch/output_pose.launch \
+   bag_filenames:=$PWD/bagfiles/$BAGNAME.bag \
+   config_path:=$PWD/config/ \
+   pose_graph_filename:=$PWD/pbstream/$BAGNAME.bag.pbstream
+
