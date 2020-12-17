@@ -3,8 +3,17 @@ This is fork of https://github.com/cartographer-project/cartographer
 
 
 ## Installment
+Make sure your **CMAKE>3.6.0**
+```
+git clone https://github.com/unmannedlab/cartographer.git
+sudo apt-get update
+sudo apt-get install -y python-wstool python-rosdep ninja-build stow
+cd cartographer
+src/cartographer/scripts/install_proto3.sh
+sudo apt-get install libsuitesparse-dev
+catkin_make_isolated --install --use-ninja
+```
 
-please follow the instruction in this link: https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html#building-installation
 
 ## Usage:
 

@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+devel_isolated/*
+build_isolated/*
+install_isolated/*
+protobuf/build/*
